@@ -89,9 +89,13 @@
   .icon-btn{width:40px;height:40px;border-radius:10px;border:1px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:border-color .15s,transform .15s}
   .icon-btn:hover{border-color:var(--primary);transform:translateY(-1px)}.icon-btn svg{width:18px;height:18px}
   .hamburger{display:none}
-  .mobile-menu{display:none;flex-direction:column;gap:4px;padding:12px var(--gutter) 20px;border-bottom:1px solid var(--line);background:var(--surface)}
+  .mobile-menu{display:none;flex-direction:column;gap:4px;padding:12px var(--gutter) 20px;border-bottom:1px solid var(--line);background:var(--surface);position:relative;z-index:51;box-shadow:0 20px 34px -20px rgba(14,26,43,.45)}
   .mobile-menu a{padding:12px 14px;border-radius:10px;font-weight:500;color:var(--ink-soft)}
-  .mobile-menu.open{display:flex}.mobile-menu .btn{margin-top:8px;justify-content:center}
+  .mobile-menu.open{display:flex;animation:menuDrop .25s cubic-bezier(.22,1,.36,1)}.mobile-menu .btn{margin-top:8px;justify-content:center}
+  @keyframes menuDrop{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:none}}
+  .menu-backdrop{position:fixed;inset:0;z-index:40;background:rgba(8,12,20,.5);opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s ease}
+  .menu-backdrop.show{opacity:1;visibility:visible}
+  body.menu-open{overflow:hidden}
 
   /* hero */
   .hero{position:relative;overflow:hidden;padding-top:clamp(40px,6vw,64px);padding-bottom:clamp(44px,6vw,80px)}
@@ -369,6 +373,7 @@
     <a href="#contact" class="btn btn-primary">Get in touch</a>
   </div>
 </header>
+<div class="menu-backdrop" id="menuBackdrop" aria-hidden="true"></div>
 
 <main id="top">
 
@@ -683,10 +688,14 @@
 <script>
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var mobileMenu=document.getElementById('mobileMenu'), hamburger=document.getElementById('hamburger');
-  function closeMenu(){mobileMenu.classList.remove('open');hamburger.setAttribute('aria-expanded','false');}
-  hamburger.addEventListener('click',function(){var o=mobileMenu.classList.toggle('open');hamburger.setAttribute('aria-expanded',o?'true':'false');});
+  var mobileMenu=document.getElementById('mobileMenu'), hamburger=document.getElementById('hamburger'), menuBackdrop=document.getElementById('menuBackdrop');
+  function openMenu(){mobileMenu.classList.add('open');if(menuBackdrop)menuBackdrop.classList.add('show');document.body.classList.add('menu-open');hamburger.setAttribute('aria-expanded','true');}
+  function closeMenu(){mobileMenu.classList.remove('open');if(menuBackdrop)menuBackdrop.classList.remove('show');document.body.classList.remove('menu-open');hamburger.setAttribute('aria-expanded','false');}
+  hamburger.addEventListener('click',function(){(mobileMenu.classList.contains('open')?closeMenu:openMenu)();});
+  if(menuBackdrop) menuBackdrop.addEventListener('click',closeMenu);
   mobileMenu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeMenu);});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
+  window.addEventListener('resize',function(){if(window.innerWidth>1024)closeMenu();});
 
   var root=document.documentElement, themeBtn=document.getElementById('themeBtn');
   try{var s=localStorage.getItem('eb-theme'); if(s)root.setAttribute('data-theme',s);}catch(e){}
