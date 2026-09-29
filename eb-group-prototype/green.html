@@ -77,7 +77,6 @@
   .co-logo{height:46px;display:inline-flex;align-items:center;background:#fff;border:1px solid var(--line);border-radius:11px;padding:7px 12px}
   .co-logo img{max-height:30px;max-width:150px;width:auto;object-fit:contain;display:block}
   .nav-emblem{height:46px;width:auto;flex:none;margin-left:14px;border-radius:6px}
-  @media (max-width:900px){.nav-emblem{display:none}}
   header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
   .nav-in{display:flex;align-items:center;gap:22px;height:68px}
   .brand{display:flex;align-items:center;gap:11px;font-family:var(--font-display);font-weight:800;font-size:19px;letter-spacing:-.03em}
@@ -324,6 +323,9 @@
   .fm-card b{font-size:14px;display:block}.fm-card small{font-size:12px;color:var(--muted);font-family:var(--font-mono)}
   .fm-bar{margin-left:auto;font-family:var(--font-mono);font-size:12px;font-weight:700;color:var(--good)}
 
+  @media (max-width:1024px){
+    .nav-links,.nav-cta .btn{display:none}.hamburger{display:grid}.nav-cta{margin-left:auto}.nav-emblem{display:none}
+  }
   @media (max-width:960px){
     .hero-grid{grid-template-columns:1fr}.panel-hold{max-width:520px}
     .frows .frow{grid-template-columns:1fr;gap:24px}.frow:nth-child(even) .frow-media{order:0}
@@ -335,7 +337,6 @@
     .contact-grid{grid-template-columns:1fr}.foot-grid{grid-template-columns:1fr 1fr}
   }
   @media (max-width:680px){
-    .nav-links,.nav-cta .btn{display:none}.hamburger{display:grid}
     .bento,.ind-grid,.quote-grid,.steps,.companies-grid{grid-template-columns:1fr}
     .country-grid{grid-template-columns:1fr 1fr}
     .stat-grid{grid-template-columns:1fr 1fr}.foot-grid{grid-template-columns:1fr}
@@ -674,7 +675,7 @@
     <div class="foot-col"><h5>Get in touch</h5><a href="#contact">Book an assessment</a><a href="#contact">info@eb.com.tr</a><a href="#global">Global footprint</a><a href="#about">About</a></div>
   </div>
   <div class="wrap foot-bot"><small>© 2026 E&#8209;B Group. Prototype concept — not the live site.</small><div class="soc"><a href="https://www.linkedin.com/company/e-b-group" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 5 8.5a2.5 2.5 0 0 1-.02-5zM3 9h4v12H3zM10 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05C21.4 8.65 22 11 22 14.1V21h-4v-6c0-1.43-.03-3.27-2-3.27-2 0-2.3 1.56-2.3 3.17V21h-4z"/></svg></a></div></div>
-  <div class="disclaimer">Design prototype for E&#8209;B Group (eb.com.tr) · brand-red light theme · company names, links, structure &amp; milestones are real; testimonials &amp; performance figures are illustrative; logos are monogram placeholders.</div>
+  <div class="disclaimer">Design prototype for E&#8209;B Group (eb.com.tr) · light theme · company names, links, structure &amp; milestones are real; Türkiye company logos are real, global-division logos are placeholders; testimonials &amp; performance figures are illustrative.</div>
 </footer>
 
 <div class="mcta"><a href="#contact" class="btn btn-primary">Book a 45-min assessment</a></div>
