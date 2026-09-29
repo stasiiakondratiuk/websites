@@ -108,13 +108,14 @@
   .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
   .colinks{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:30px}
   .cl-label{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);width:100%}
-  .cl{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid var(--line);border-radius:11px;background:var(--surface);box-shadow:var(--e1);transition:transform .18s,border-color .18s,box-shadow .18s}
+  .cl{display:inline-flex;align-items:center;gap:9px;padding:8px 13px;border:1px solid var(--line);border-radius:11px;background:#fff;box-shadow:var(--e1);transition:transform .18s,border-color .18s,box-shadow .18s}
+  .cl-logo{height:20px;width:auto;max-width:118px;object-fit:contain;display:block}
   .cl:hover{transform:translateY(-2px);border-color:var(--ca,var(--primary));box-shadow:var(--e2)}
   .cl-mark{width:24px;height:24px;border-radius:6px;background:var(--ca,var(--primary));color:#fff;display:grid;place-items:center;font-family:var(--font-display);font-weight:800;font-size:9.5px}
   .cl b{font-family:var(--font-display);font-weight:700;font-size:14px}
   .cl .ext{width:13px;height:13px;color:var(--muted)}
   .cl:hover .ext{color:var(--ca,var(--primary))}
-  .cl.ph{border-style:dashed;opacity:.75}
+  .cl.ph{border-style:dashed}
 
   .panel-hold{position:relative}
   .panel{background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:var(--e3);overflow:hidden}
@@ -391,12 +392,12 @@
       </div>
       <div class="colinks reveal" style="--d:340ms">
         <span class="cl-label">E&#8209;B Group Türkiye</span>
-        <a class="cl" href="https://www.etb.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-etb)"><span class="cl-mark">ETB</span><b>ETB</b><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="cl" href="https://www.bio-ser.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-bio)"><span class="cl-mark">BIO</span><b>BIOSER</b><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="cl ph" href="#companies" style="--ca:var(--c-pay)"><span class="cl-mark">PAY</span><b>BioPAY</b><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="cl" href="https://www.das.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-das)"><span class="cl-mark">DAS</span><b>DAS</b><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="cl" href="https://www.ekspresbim.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-bim)"><span class="cl-mark">EBM</span><b>Ekspress&nbsp;Bim</b><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
-        <a class="cl ph" href="#companies" style="--ca:var(--c-ekspa)"><span class="cl-mark">EKS</span><b>eks&#8209;pa</b><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="cl" href="https://www.etb.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-etb)"><img class="cl-logo" src="assets/etb.png" alt="ETB"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="cl" href="https://www.bio-ser.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-bio)"><img class="cl-logo" src="assets/bioser.png" alt="BIOSER"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="cl ph" href="#companies" style="--ca:var(--c-pay)"><img class="cl-logo" src="assets/biopay.png" alt="BioPAY"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="cl" href="https://www.das.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-das)"><img class="cl-logo" src="assets/das.png" alt="DAS"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="cl" href="https://www.ekspresbim.com.tr" target="_blank" rel="noopener noreferrer" style="--ca:var(--c-bim)"><img class="cl-logo" src="assets/ekspress.jpg" alt="Ekspress Bim"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="cl ph" href="#companies" style="--ca:var(--c-ekspa)"><img class="cl-logo" src="assets/ekspa.jpg" alt="eks-pa"><svg class="ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
     </div>
     <div class="panel-hold reveal" style="--d:220ms">
